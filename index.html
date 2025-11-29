@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ORI Interior Decoration - 新竹軟裝設計專家。提供公領域、全室軟裝規劃，打造光與森的生活層次。致力於創造有溫度的居住空間。">
+    <title>ORI INTERIOR DESIGN | 軟裝設計</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        bronze: {
+                            400: '#c5a065', // 自訂古銅金
+                            500: '#b08d55',
+                            600: '#8c6b38',
+                            700: '#6d522a', // 更深的古銅色用於強調
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #44403c;
+            background-color: #fdfcf8;
+            overflow-x: hidden;
+        }
+
+        /* 自訂捲軸樣式 - 提升整體質感 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e; 
+        }
+        
+        /* 滾動動畫類別 */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 圖片懸停效果 */
+        .image-wrapper {
+            overflow: hidden;
+        }
+        .image-wrapper img {
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .image-wrapper:hover img {
+            transform: scale(1.08);
+        }
+        
+        /* 玻璃擬態 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-bronze-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="https://shanipan.github.io/ORI-Interior-Design/" class="group flex-shrink-0 flex items-center cursor-pointer opacity-90 hover:opacity-100 transition-opacity gap-4">
+                    <!-- Logo Image -->
+                    <img src="LOGO黑-03 - 複製.png" alt="ORI INTERIOR DESIGN" id="nav-logo" class="h-12 w-auto object-contain transition-all duration-300">
+                    
+                    <!-- Logo Text -->
+                    <div class="flex flex-col justify-center border-l border-stone-400 pl-4 h-10 transition-colors duration-300" id="nav-text-container">
+                        <p class="text-xl font-display tracking-widest leading-none text-stone-800 transition-colors duration-300 group-hover:text-stone-600">ORI</p>
+                        <p class="text-[0.65rem] font-light tracking-[0.3em] text-stone-600 transition-colors duration-300">INTERIOR DESIGN</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-10 items-center">
+                    <a href="https://shanipan.github.io/ORI-Interior-Design/" class="text-stone-600 hover:text-stone-900 transition-colors text-sm tracking-[0.2em] font-medium relative group py-2">
+                        回到森森
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-stone-800 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#philosophy" class="text-stone-600 hover:text-stone-900 transition-colors text-sm tracking-[0.2em] font-medium relative group py-2">
+                        關於軟裝
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-stone-800 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="text-stone-600 hover:text-stone-900 transition-colors text-sm tracking-[0.2em] font-medium relative group py-2">
+                        服務方案
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-stone-800 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#offers" class="text-stone-600 hover:text-bronze-500 transition-colors text-sm tracking-[0.2em] font-medium relative group py-2">
+                        限定優惠
+                        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-bronze-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="bg-stone-900 text-white px-7 py-2.5 rounded-sm text-xs tracking-[0.2em] hover:bg-stone-700 active:scale-95 transition-all hover:shadow-lg transform duration-300">
+                        CONTACT
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-stone-800 p-2 focus:outline-none hover:bg-stone-100 rounded-full transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-stone-500 hover:text-stone-900 p-2">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="https://shanipan.github.io/ORI-Interior-Design/" class="mobile-link text-2xl text-stone-800 font-serif tracking-widest">回到森森</a>
+            <a href="#philosophy" class="mobile-link text-2xl text-stone-800 font-serif tracking-widest">關於軟裝</a>
+            <a href="#services" class="mobile-link text-2xl text-stone-800 font-serif tracking-widest">服務方案</a>
+            <a href="#offers" class="mobile-link text-2xl text-bronze-500 font-serif tracking-widest">限定優惠</a>
+            <a href="#contact" class="mobile-link text-2xl text-stone-800 font-serif tracking-widest">聯絡我們</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+        <!-- Parallax Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="DSC04511.jpg" alt="Living Room Interior" class="w-full h-full object-cover animate-[subtle-zoom_20s_infinite_alternate]">
+            <div class="absolute inset-0 bg-stone-900/20 backdrop-brightness-95"></div>
+            <!-- Bottom Gradient for smooth transition -->
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-stone-50/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+            <div class="reveal-on-scroll delay-100">
+                <p class="text-white/90 tracking-[0.2em] text-sm md:text-xl mb-8 uppercase font-serif border-b border-white/40 inline-block pb-3">ORI Interior Decoration</p>
+            </div>
+            <h1 class="reveal-on-scroll delay-200 text-4xl md:text-5xl lg:text-6xl text-white font-light tracking-wide mb-8 leading-tight font-serif drop-shadow-lg">
+                光 × 森 <br class="md:hidden"> <span class="text-3xl md:text-4xl align-middle mx-2 font-light">×</span> 生活層次
+            </h1>
+            <p class="reveal-on-scroll delay-300 text-lg md:text-xl text-white/80 font-light tracking-[0.15em] mt-6 drop-shadow leading-relaxed">
+                不只是讓家變漂亮，<br class="md:hidden">是讓回家變成值得期待的事。
+            </p>
+            <div class="reveal-on-scroll delay-500 mt-16">
+                <a href="#philosophy" class="group inline-flex items-center gap-3 border border-white/40 text-white px-8 py-3 rounded-full hover:bg-white hover:text-stone-900 active:scale-95 transition-all duration-500 backdrop-blur-[2px] tracking-[0.2em] text-sm uppercase">
+                    Explore
+                    <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+    </header>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-32 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Images Area -->
+                <div class="lg:col-span-5 relative reveal-on-scroll">
+                    <div class="relative z-10 image-wrapper aspect-[3/4]">
+                        <img src="DSC04512.jpg" loading="lazy" alt="Living Room Corner" class="w-full h-full object-cover shadow-2xl">
+                    </div>
+                    <!-- Aesthetic rectangle behind -->
+                    <div class="absolute -top-8 -left-8 w-full h-full border border-stone-200 -z-0 hidden lg:block"></div>
+                </div>
+
+                <!-- Text Area -->
+                <div class="lg:col-span-6 lg:col-start-7 space-y-10 reveal-on-scroll">
+                    <div>
+                        <span class="text-bronze-400 font-display italic text-xl mb-2 block">Philosophy</span>
+                        <h2 class="text-3xl md:text-5xl text-stone-800 leading-tight font-serif">
+                            在硬體定義結構後，<br>
+                            <span class="text-stone-500 text-2xl md:text-4xl mt-2 block">軟裝與家飾，是空間呼吸的方式。</span>
+                        </h2>
+                    </div>
+                    
+                    <div class="w-16 h-[1px] bg-stone-300"></div>
+
+                    <div class="space-y-8 text-stone-600 leading-loose tracking-wide font-light text-justify text-lg">
+                        <p>
+                            一朵花、一盞燈、一塊布、一張桌上柔和的光影——
+                            它們不是裝飾，而是讓空間活起來的溫度與表情。
+                        </p>
+                        <p>
+                            透過家飾與陳列，堆疊生活的層次，
+                            使家有靈魂，使生活有觸感。
+                        </p>
+                    </div>
+
+                    <!-- Mobile only extra image -->
+                    <div class="lg:hidden mt-8 rounded-sm overflow-hidden shadow-lg">
+                        <img src="DSC04469.jpg" loading="lazy" alt="Dining Room Detail" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-stone-50 relative">
+        <!-- Subtle Pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#44403c 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 reveal-on-scroll">
+                <span class="text-bronze-400 tracking-[0.3em] text-xs uppercase block mb-4 font-bold">Service & Pricing</span>
+                <h2 class="text-3xl md:text-4xl text-stone-800 font-serif">軟裝設計服務方案</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="bg-white p-10 lg:p-12 shadow-sm hover:shadow-2xl transition-all duration-500 group reveal-on-scroll border border-stone-100 flex flex-col">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-stone-800 mb-2 font-serif">軟裝規劃</h3>
+                        <p class="text-base text-stone-400 tracking-wide">純粹的軟裝配置建議</p>
+                    </div>
+                    <div class="mb-8 pb-8 border-b border-stone-100">
+                        <div class="flex items-baseline">
+                            <span class="text-xl text-stone-500 mr-2 font-display">NT$</span>
+                            <span class="text-5xl md:text-6xl font-light text-stone-800 font-display">4,000</span>
+                            <span class="text-base text-stone-400 ml-2">/ 坪</span>
+                        </div>
+                        <p class="text-sm text-stone-400 mt-3 tracking-wide">*最低基本收費 NT$ 50,000 (12坪)</p>
+                    </div>
+                    <ul class="space-y-5 mb-10 flex-grow text-lg">
+                        <li class="flex items-start group-hover:translate-x-1 transition-transform duration-300">
+                            <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span class="text-stone-600">軟裝規劃提案簡報</span>
+                        </li>
+                        <li class="flex items-start group-hover:translate-x-1 transition-transform duration-300 delay-75">
+                            <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span class="text-stone-600">家具 × 家飾 × 窗簾 × 燈具搭配清單</span>
+                        </li>
+                        <li class="flex items-start group-hover:translate-x-1 transition-transform duration-300 delay-100">
+                            <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span class="text-stone-600">風格 Moodboard × 色彩材質建議</span>
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-6 border-t border-stone-100">
+                         <p class="text-base text-stone-500 flex justify-between font-medium">
+                            <span>代購執行服務費</span>
+                            <span>10%</span>
+                         </p>
+                    </div>
+                </div>
+
+                <!-- Plan 2 (Featured) -->
+                <div class="bg-stone-900 text-white p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 transform lg:-translate-y-4 relative overflow-hidden reveal-on-scroll delay-100 flex flex-col">
+                    <!-- Gold Gradient Border Top -->
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-bronze-400 to-white/20"></div>
+                    
+                    <div class="absolute top-6 right-6">
+                        <span class="bg-bronze-400 text-white text-xs tracking-widest uppercase px-3 py-1 rounded-sm font-bold shadow-lg">Recommended</span>
+                    </div>
+
+                    <div class="mb-8 mt-2">
+                        <h3 class="text-2xl font-bold text-white mb-2 font-serif">軟裝規劃 ＋ 平面施工圖</h3>
+                        <p class="text-base text-stone-400 tracking-wide">完整的空間整合方案</p>
+                    </div>
+                    <div class="mb-8 pb-8 border-b border-stone-700">
+                        <div class="flex items-baseline">
+                            <span class="text-xl text-stone-500 mr-2 font-display">NT$</span>
+                            <span class="text-5xl md:text-6xl font-light text-white font-display">5,000</span>
+                            <span class="text-base text-stone-400 ml-2">/ 坪</span>
+                        </div>
+                        <p class="text-sm text-stone-400 mt-3 tracking-wide">*含風格整體規劃、搭配邏輯、配色材質</p>
+                    </div>
+                    <ul class="space-y-5 mb-10 flex-grow text-lg">
+                        <li class="flex items-start hover:translate-x-1 transition-transform duration-300">
+                            <i data-lucide="check" class="w-5 h-5 text-bronze-400 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-stone-200">包含所有左側服務項目</span>
+                        </li>
+                        <li class="flex items-start hover:translate-x-1 transition-transform duration-300 delay-75">
+                            <i data-lucide="check" class="w-5 h-5 text-bronze-400 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-stone-200">平面配置施工圖</span>
+                        </li>
+                        <li class="flex items-start hover:translate-x-1 transition-transform duration-300 delay-100">
+                            <i data-lucide="check" class="w-5 h-5 text-bronze-400 mr-3 mt-1 flex-shrink-0"></i>
+                            <span class="text-stone-200">選品方向定調</span>
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-6 border-t border-stone-800">
+                         <p class="text-base text-stone-400 flex justify-between font-medium">
+                            <span>代購執行服務費</span>
+                            <span>10%</span>
+                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inclusions Icons -->
+            <div class="max-w-4xl mx-auto mt-20 reveal-on-scroll">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="p-6 bg-white border border-stone-100 text-center hover:border-bronze-400/30 transition-colors duration-300">
+                        <i data-lucide="palette" class="w-6 h-6 mx-auto mb-4 text-stone-700"></i>
+                        <p class="text-base text-stone-600 tracking-wide">風格設計<br>視覺氛圍</p>
+                    </div>
+                    <div class="p-6 bg-white border border-stone-100 text-center hover:border-bronze-400/30 transition-colors duration-300">
+                        <i data-lucide="lamp" class="w-6 h-6 mx-auto mb-4 text-stone-700"></i>
+                        <p class="text-base text-stone-600 tracking-wide">家具家飾<br>整合建議</p>
+                    </div>
+                    <div class="p-6 bg-white border border-stone-100 text-center hover:border-bronze-400/30 transition-colors duration-300">
+                        <i data-lucide="layers" class="w-6 h-6 mx-auto mb-4 text-stone-700"></i>
+                        <p class="text-base text-stone-600 tracking-wide">空間配色<br>材質整合</p>
+                    </div>
+                    <div class="p-6 bg-white border border-stone-100 text-center hover:border-bronze-400/30 transition-colors duration-300">
+                        <i data-lucide="camera" class="w-6 h-6 mx-auto mb-4 text-stone-700"></i>
+                        <p class="text-base text-stone-600 tracking-wide">佈置落地<br>精美拍攝</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Parallax -->
+    <section id="offers" class="py-32 relative bg-stone-800 text-white overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute inset-0 z-0 opacity-20">
+             <img src="DSC04469.jpg" loading="lazy" class="w-full h-full object-cover grayscale brightness-75" alt="Background Dining Room">
+        </div>
+        <div class="absolute inset-0 bg-stone-900/90 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-stone-700 pb-6 reveal-on-scroll">
+                <div>
+                    <span class="text-bronze-400 tracking-[0.2em] text-sm uppercase block mb-3 font-bold flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> Exclusive
+                    </span>
+                    <h2 class="text-3xl md:text-5xl text-white font-serif">綁定工程客戶限定</h2>
+                </div>
+                <p class="text-stone-400 font-light mt-4 md:mt-0 text-right text-lg">
+                    給你更優於市場的超優惠價格<br>
+                    <span class="text-sm tracking-wider opacity-60">Limited Time Offers</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-20">
+                
+                <!-- Offer Card 1: 7坪內 -->
+                <div class="group bg-white/5 backdrop-blur-md border border-white/10 p-8 lg:p-10 hover:bg-white/10 hover:border-bronze-400/50 transition-all duration-500 reveal-on-scroll flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-stone-800 text-stone-300 text-sm font-bold tracking-widest uppercase mb-3 border border-stone-700 rounded-sm">7坪內｜客廳＋餐廳</span>
+                            <h3 class="text-3xl md:text-4xl font-serif text-white group-hover:text-bronze-400 transition-colors mb-2">公領域軟裝方案</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl md:text-2xl text-stone-300 font-medium line-through mb-1 opacity-80">價值 $28,000</p>
+                            <p class="text-5xl font-display text-bronze-400 font-medium">$15,500</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-950/50 p-5 rounded-sm mb-8 text-sm text-stone-300 border-l-2 border-bronze-400">
+                        <p class="flex items-center mb-2 font-bold text-bronze-400 tracking-wide"><i data-lucide="gift" class="w-4 h-4 mr-2"></i> 內容包含：</p>
+                        <p class="pl-6 mb-1 opacity-90">✔️ 價值$21,000 設計費 (7x3000)</p>
+                        <p class="pl-6 opacity-90">✔️ 五感氛圍禮包價值 $7,000 / 套</p>
+                    </div>
+
+                    <div class="space-y-6 mb-8 border-t border-white/10 pt-6 flex-grow">
+                        <p class="text-white font-serif italic text-xl tracking-wide">「最適合 想快速讓家變美 的屋主」</p>
+                        <ul class="space-y-3 text-base">
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                公領域風格 + 配色 + 搭配建議
+                            </li>
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                氛圍設計 × 家具選品方向
+                            </li>
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                最快幫你完成 住家最重要的第一印象
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="w-full py-4 border border-bronze-400/50 text-bronze-400 hover:bg-bronze-400 hover:text-white active:scale-95 transition-all duration-300 text-base tracking-widest uppercase flex items-center justify-center gap-2 group-hover:shadow-[0_0_25px_rgba(197,160,101,0.2)] mt-auto cursor-pointer">
+                        立即預約
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+                <!-- Offer Card 2: 20坪內 (Featured) -->
+                <div class="group bg-gradient-to-br from-stone-800 to-stone-900 border border-bronze-400/30 p-8 lg:p-10 hover:border-bronze-400 transition-all duration-500 reveal-on-scroll delay-100 relative overflow-hidden flex flex-col">
+                    <div class="absolute -top-12 -right-12 w-48 h-48 bg-bronze-400/10 rounded-full blur-3xl group-hover:bg-bronze-400/20 transition-all duration-700"></div>
+                    
+                    <div class="flex justify-between items-start mb-6 relative z-10">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-bronze-400/20 text-bronze-200 text-sm font-bold tracking-widest uppercase mb-3 border border-bronze-400/30 rounded-sm">20坪內｜整體風格統一</span>
+                            <h3 class="text-3xl md:text-4xl font-serif text-white group-hover:text-bronze-400 transition-colors mb-2">全室超值軟裝方案</h3>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xl md:text-2xl text-stone-300 font-medium line-through mb-1 opacity-80">價值 $67,000</p>
+                            <p class="text-5xl font-display text-bronze-400 font-medium">$29,900</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-stone-950/60 p-5 rounded-sm mb-8 text-sm text-stone-300 border-l-2 border-bronze-400 relative z-10">
+                        <p class="flex items-center mb-2 font-bold text-bronze-400 tracking-wide"><i data-lucide="gift" class="w-4 h-4 mr-2"></i> 內容包含：</p>
+                        <p class="pl-6 mb-1 opacity-90">✔️ 價值$60,000 設計費 (20x3000)</p>
+                        <p class="pl-6 opacity-90">✔️ 五感氛圍禮包價值 $7,000 / 套</p>
+                    </div>
+
+                    <div class="space-y-6 mb-8 border-t border-white/10 pt-6 relative z-10 flex-grow">
+                        <p class="text-white font-serif italic text-xl tracking-wide">給想要「全家一致美感與生活氛圍層次」的你</p>
+                        <ul class="space-y-3 text-base">
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                公領域＋臥房整體軟裝設計
+                            </li>
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                生活日常 × 氛圍落地
+                            </li>
+                            <li class="flex items-center text-stone-300">
+                                <span class="w-1.5 h-1.5 bg-bronze-400 rounded-full mr-3 flex-shrink-0"></span>
+                                空間整體性規劃
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="w-full py-4 bg-bronze-400 text-white hover:bg-white hover:text-stone-900 active:scale-95 transition-all duration-300 text-base tracking-widest uppercase flex items-center justify-center gap-2 shadow-lg relative z-10 mt-auto cursor-pointer">
+                        立即預約
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+
+            </div>
+
+             <!-- Inclusions Detail -->
+            <div class="max-w-4xl mx-auto border-t border-stone-700 pt-12 text-center reveal-on-scroll">
+                <p class="text-center text-bronze-600 font-medium text-base md:text-lg mb-8 tracking-wider">
+                    📌 方案坪數超出計價 + $3,000 / 坪
+                </p>
+                
+                <h4 class="text-bronze-400 text-xl mb-8 flex items-center justify-center gap-3 tracking-widest font-serif">
+                    <span class="w-12 h-[1px] bg-bronze-400/50"></span> 方案皆包含 <span class="w-12 h-[1px] bg-bronze-400/50"></span>
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 text-stone-300 text-base font-light text-left md:text-center max-w-3xl mx-auto bg-stone-900/50 p-8 rounded-lg border border-stone-800">
+                    <div class="flex items-center md:justify-center">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
+                        軟裝風格設計與視覺氛圍規劃
+                    </div>
+                    <div class="flex items-center md:justify-center">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
+                        家具 / 家飾 / 窗簾 / 燈具 / 配件建議
+                    </div>
+                    <div class="flex items-center md:justify-center">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
+                        空間配色 × 材質 × 元素整合
+                    </div>
+                    <div class="flex items-center md:justify-center">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
+                        佈置落地與精美拍攝 (價值$10,000)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Notices & Details -->
+    <section class="py-24 bg-[#fdfcf8] border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="reveal-on-scroll">
+                <h4 class="text-center text-stone-400 text-sm tracking-[0.25em] mb-12 uppercase">Notices & Details</h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto bg-white shadow-xl rounded-sm overflow-hidden border border-stone-100">
+                    <!-- Text Side -->
+                    <div class="p-10 md:p-12 flex flex-col justify-center">
+                        <p class="font-serif text-2xl text-stone-800 mb-6 flex items-center">
+                            <span class="w-1 h-6 bg-stone-300 mr-4"></span>
+                            另計項目說明
+                        </p>
+                        <p class="text-base text-stone-400 mb-8 font-light">以下項目為依需求追加，不包含在上述方案費用中：</p>
+                        <ul class="space-y-5">
+                            <li class="flex items-start group">
+                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
+                                <span class="text-stone-600 text-base">家具與家飾實際採購費用</span>
+                            </li>
+                            <li class="flex items-start group">
+                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
+                                <span class="text-stone-600 text-base">代購與下單服務</span>
+                            </li>
+                            <li class="flex items-start group">
+                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
+                                <span class="text-stone-600 text-base">佈置人力執行費用（如需延伸可追加）</span>
+                            </li>
+                            <li class="flex items-start group">
+                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
+                                <span class="text-stone-600 text-base">五感氛圍禮包恕不選品</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Image Side -->
+                    <div class="relative h-64 md:h-auto overflow-hidden">
+                        <img src="25006-22.jpg" loading="lazy" alt="Aesthetic Detail" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105 filter brightness-95">
+                        <div class="absolute inset-0 bg-stone-900/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ending Quote Section -->
+    <section class="py-24 bg-white text-center">
+        <div class="max-w-3xl mx-auto px-6 reveal-on-scroll">
+             <i data-lucide="quote" class="w-8 h-8 text-bronze-400/30 mx-auto mb-6"></i>
+             <h3 class="text-xl md:text-3xl text-stone-600 font-serif leading-relaxed tracking-widest font-light">
+                不只是讓家變漂亮，<br><span class="text-bronze-500 mt-2 block">是讓回家變成值得期待的事。</span>
+             </h3>
+             <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-bronze-300 to-transparent mx-auto mt-8 opacity-40"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-stone-300 pt-10 pb-8 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 mb-8">
+                <!-- Logo & Text Section -->
+                <div class="flex items-center gap-4">
+                    <a href="https://shanipan.github.io/ORI-Interior-Design/" class="inline-block hover:opacity-80 transition-opacity">
+                        <img src="LOGO黑-03 - 複製.png" alt="ORI Logo" class="h-10 w-auto invert brightness-0 filter grayscale opacity-90">
+                    </a>
+                    <!-- Thin Vertical Divider -->
+                    <div class="h-8 w-px bg-stone-700/50"></div>
+                    <p class="text-stone-300 font-serif text-base tracking-[0.15em] uppercase text-nowrap">ORI Interior Design</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-16 text-xs font-light tracking-wide text-stone-400">
+                    <div>
+                        <h4 class="text-bronze-400 font-bold uppercase mb-3 text-[10px] tracking-[0.2em] opacity-80">Contact Us</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2 group cursor-pointer">
+                                <i data-lucide="mail" class="w-3 h-3 text-stone-500 group-hover:text-bronze-400 transition-colors"></i>
+                                <a href="mailto:joey19860324@gmail.com" class="group-hover:text-white transition-colors">joey19860324@gmail.com</a>
+                            </li>
+                            <li class="flex items-center gap-2 group cursor-pointer">
+                                <i data-lucide="phone" class="w-3 h-3 text-stone-500 group-hover:text-bronze-400 transition-colors"></i>
+                                <a href="tel:0975912230" class="group-hover:text-white transition-colors">0975-912-230 (預約制)</a>
+                            </li>
+                            <li class="flex items-center gap-2 group cursor-pointer">
+                                <i data-lucide="map-pin" class="w-3 h-3 text-stone-500 group-hover:text-bronze-400 transition-colors"></i>
+                                <a href="https://maps.google.com/?q=新竹縣竹東鎮光明路126巷87弄15號2樓" target="_blank" class="group-hover:text-white transition-colors">新竹縣竹東鎮光明路126巷87弄15號2樓</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Social Icons -->
+                    <div>
+                        <h4 class="text-bronze-400 font-bold uppercase mb-3 text-[10px] tracking-[0.2em] opacity-80">Follow</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-stone-500 hover:text-white transition-transform hover:-translate-y-0.5 duration-300">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#" class="text-stone-500 hover:text-white transition-transform hover:-translate-y-0.5 duration-300">
+                                <i data-lucide="facebook" class="w-4 h-4"></i>
+                            </a>
+                             <a href="#" class="text-stone-500 hover:text-white transition-transform hover:-translate-y-0.5 duration-300">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright Line -->
+            <div class="border-t border-stone-800 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-stone-600 tracking-widest uppercase">
+                <p>&copy; 2024 ORI INTERIOR DESIGN. All rights reserved.</p>
+                <div class="mt-2 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-stone-400 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-stone-400 transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button onclick="window.scrollTo(0,0)" class="fixed bottom-8 right-8 bg-white text-stone-900 w-12 h-12 flex items-center justify-center rounded-full shadow-lg translate-y-20 opacity-0 transition-all duration-500 hover:bg-stone-900 hover:text-white z-40 border border-stone-100" id="backToTop">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <style>
+        @keyframes subtle-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Reveal Animations on Scroll
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('translate-x-full');
+            if (isHidden) {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Navbar & Back to Top Scroll Logic
+        const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('backToTop');
+        const navLogo = document.getElementById('nav-logo');
+        const navTextContainer = document.getElementById('nav-text-container');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+                navbar.classList.add('bg-transparent');
+                backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+            }
+        });
+    </script>
+</body>
+</html>
