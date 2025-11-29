@@ -24,6 +24,7 @@
                             700: '#44403c',
                             800: '#292524',
                             900: '#1c1917',
+                            950: '#0c0a09', // Added darker stone for contrast
                         },
                         bronze: {
                             400: '#c5a065', // 自訂古銅金
@@ -130,8 +131,8 @@
                         限定優惠
                         <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-bronze-400 transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#contact" class="bg-stone-900 text-white px-7 py-2.5 rounded-sm text-xs tracking-[0.2em] hover:bg-stone-700 active:scale-95 transition-all hover:shadow-lg transform duration-300">
-                        CONTACT
+                    <a href="#style-analysis" class="bg-stone-900 text-white px-7 py-2.5 rounded-sm text-xs tracking-[0.2em] hover:bg-stone-700 active:scale-95 transition-all hover:shadow-lg transform duration-300">
+                        預約諮詢
                     </a>
                 </div>
 
@@ -354,7 +355,7 @@
     </section>
 
     <!-- Special Offers Parallax -->
-    <section id="offers" class="py-32 relative bg-stone-800 text-white overflow-hidden">
+    <section id="offers" class="py-32 relative bg-stone-900 text-white overflow-hidden">
         <!-- Background accents -->
         <div class="absolute inset-0 z-0 opacity-20">
              <img src="DSC04469.jpg" loading="lazy" class="w-full h-full object-cover grayscale brightness-75" alt="Background Dining Room">
@@ -375,6 +376,7 @@
                 </p>
             </div>
 
+            <!-- Offers Grid (Restored to Side-by-Side) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-20">
                 
                 <!-- Offer Card 1: 7坪內 -->
@@ -414,7 +416,7 @@
                         </ul>
                     </div>
 
-                    <a href="#contact" class="w-full py-4 border border-bronze-400/50 text-bronze-400 hover:bg-bronze-400 hover:text-white active:scale-95 transition-all duration-300 text-base tracking-widest uppercase flex items-center justify-center gap-2 group-hover:shadow-[0_0_25px_rgba(197,160,101,0.2)] mt-auto cursor-pointer">
+                    <a href="#contact" class="w-full py-4 border border-bronze-400/50 text-bronze-400 hover:bg-bronze-400 hover:text-white transition-all duration-300 text-base tracking-widest uppercase flex items-center justify-center gap-2 group-hover:shadow-[0_0_25px_rgba(197,160,101,0.2)] mt-auto cursor-pointer">
                         立即預約
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </a>
@@ -466,32 +468,39 @@
                 </div>
 
             </div>
-
-             <!-- Inclusions Detail -->
-            <div class="max-w-4xl mx-auto border-t border-stone-700 pt-12 text-center reveal-on-scroll">
-                <p class="text-center text-bronze-600 font-medium text-base md:text-lg mb-8 tracking-wider">
-                    📌 方案坪數超出計價 + $3,000 / 坪
-                </p>
+            <!-- Important Notices & Inclusions (Grouped in one box) -->
+            <div class="max-w-4xl mx-auto border-t border-stone-700 pt-16 text-center reveal-on-scroll">
                 
-                <h4 class="text-bronze-400 text-xl mb-8 flex items-center justify-center gap-3 tracking-widest font-serif">
-                    <span class="w-12 h-[1px] bg-bronze-400/50"></span> 方案皆包含 <span class="w-12 h-[1px] bg-bronze-400/50"></span>
-                </h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 text-stone-300 text-base font-light text-left md:text-center max-w-3xl mx-auto bg-stone-900/50 p-8 rounded-lg border border-stone-800">
-                    <div class="flex items-center md:justify-center">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
-                        軟裝風格設計與視覺氛圍規劃
+                <!-- Optimization: Content Wrapped in single glass box -->
+                <div class="bg-white/5 backdrop-blur-sm p-10 md:p-12 rounded-sm border border-white/10 max-w-3xl mx-auto hover:border-bronze-400/30 transition-colors duration-500">
+                    
+                    <div class="flex items-center justify-center gap-2 mb-8 text-bronze-400 font-medium text-lg tracking-wider">
+                        <i data-lucide="pin" class="w-5 h-5 fill-current"></i>
+                        <p>方案坪數超出計價 + $3,000 / 坪</p>
                     </div>
-                    <div class="flex items-center md:justify-center">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
-                        家具 / 家飾 / 窗簾 / 燈具 / 配件建議
-                    </div>
-                    <div class="flex items-center md:justify-center">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
-                        空間配色 × 材質 × 元素整合
-                    </div>
-                    <div class="flex items-center md:justify-center">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-bronze-400 mr-3 opacity-80"></i>
-                        佈置落地與精美拍攝 (價值$10,000)
+                    
+                    <h4 class="text-bronze-400 text-xl mb-10 flex items-center justify-center gap-4 tracking-widest font-serif">
+                        <span class="w-12 h-[1px] bg-bronze-400/50"></span> 重要須知 & 包含項目 <span class="w-12 h-[1px] bg-bronze-400/50"></span>
+                    </h4>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12 text-base font-light text-center">
+                        <div class="flex flex-col items-center justify-center text-stone-300 group hover:text-white transition-colors">
+                            <span class="mb-2 text-stone-500 font-bold group-hover:text-stone-400 transition-colors text-xl">✕</span>
+                            <span>不包含家具與家飾<br>實際採購費用</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-stone-300 group hover:text-white transition-colors">
+                            <span class="mb-2 text-stone-500 font-bold group-hover:text-stone-400 transition-colors text-xl">✕</span>
+                            <span>不包含代購與下單服務</span>
+                        </div>
+                        <div class="flex flex-col items-center justify-center text-stone-300 group hover:text-white transition-colors">
+                            <span class="mb-2 text-stone-500 font-bold group-hover:text-stone-400 transition-colors text-xl">✕</span>
+                            <span>飾品氛圍禮包恕不選品</span>
+                        </div>
+                        <!-- Highlighted Item -->
+                        <div class="flex flex-col items-center justify-center text-bronze-400 font-medium">
+                            <span class="mb-2 text-bronze-400 text-xl">✨</span>
+                            <span>佈置落地與精美拍攝<br>不須另外付費 (價值$10,000)</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -499,43 +508,44 @@
         </div>
     </section>
 
-    <!-- Notices & Details -->
-    <section class="py-24 bg-[#fdfcf8] border-b border-stone-100">
+    <!-- Style Analysis Section (Previously Notices) -->
+    <section id="style-analysis" class="py-24 bg-[#fdfcf8] border-b border-stone-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal-on-scroll">
-                <h4 class="text-center text-stone-400 text-sm tracking-[0.25em] mb-12 uppercase">Notices & Details</h4>
+                <h4 class="text-center text-stone-400 text-sm tracking-[0.25em] mb-12 uppercase">Style Analysis</h4>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch max-w-5xl mx-auto bg-white shadow-xl rounded-sm overflow-hidden border border-stone-100">
-                    <!-- Text Side -->
-                    <div class="p-10 md:p-12 flex flex-col justify-center">
-                        <p class="font-serif text-2xl text-stone-800 mb-6 flex items-center">
-                            <span class="w-1 h-6 bg-stone-300 mr-4"></span>
-                            另計項目說明
-                        </p>
-                        <p class="text-base text-stone-400 mb-8 font-light">以下項目為依需求追加，不包含在上述方案費用中：</p>
-                        <ul class="space-y-5">
-                            <li class="flex items-start group">
-                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
-                                <span class="text-stone-600 text-base">家具與家飾實際採購費用</span>
-                            </li>
-                            <li class="flex items-start group">
-                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
-                                <span class="text-stone-600 text-base">代購與下單服務</span>
-                            </li>
-                            <li class="flex items-start group">
-                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
-                                <span class="text-stone-600 text-base">佈置人力執行費用（如需延伸可追加）</span>
-                            </li>
-                            <li class="flex items-start group">
-                                <span class="text-stone-300 mr-4 text-sm mt-1 transition-colors group-hover:text-stone-500">✕</span>
-                                <span class="text-stone-600 text-base">五感氛圍禮包恕不選品</span>
-                            </li>
-                        </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto bg-white shadow-xl rounded-sm overflow-hidden border border-stone-100">
+                    <!-- Text Side (Updated Content) -->
+                    <div class="p-10 md:p-12 flex flex-col justify-center text-center md:text-left">
+                        <h3 class="font-serif text-2xl md:text-3xl text-stone-800 mb-6 leading-snug">
+                            探索一份只屬於你的<br><span class="text-bronze-500">風格分析</span>
+                        </h3>
+                        <div class="space-y-6 text-stone-500 font-light text-base leading-loose tracking-wide mb-8">
+                            <p>
+                                看見你的偏愛、習慣與生活氣息。<br>
+                                只需幾分鐘，就能找到適合你家的方向與指引。
+                            </p>
+                            <p class="text-stone-700 font-normal">
+                                走進你的理想之家...
+                            </p>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <div class="space-y-3">
+                            <button class="w-full md:w-auto px-8 py-3 bg-stone-800 text-white hover:bg-bronze-500 transition-all duration-300 tracking-widest text-sm rounded-sm shadow-md hover:shadow-lg flex items-center justify-center gap-3 group mx-auto md:mx-0">
+                                開始測試・預約諮詢 
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            <p class="text-xs text-stone-400 tracking-wider text-center md:text-left pl-1">
+                                * 完成測驗後，我們將主動與您聯繫
+                            </p>
+                        </div>
                     </div>
-                    <!-- Image Side -->
-                    <div class="relative h-64 md:h-auto overflow-hidden">
-                        <img src="25006-22.jpg" loading="lazy" alt="Aesthetic Detail" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105 filter brightness-95">
-                        <div class="absolute inset-0 bg-stone-900/10"></div>
+                    
+                    <!-- Image Side (Kept as requested) -->
+                    <div class="relative h-80 md:h-[500px] overflow-hidden">
+                        <img src="25006-22.jpg" loading="lazy" alt="Style Analysis Detail" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] hover:scale-110 filter brightness-95">
+                        <div class="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
                 </div>
             </div>
